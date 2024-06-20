@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication assignment</title>
+    <style>
+        *{
+            margin: 0;
+           
+        }
+        #thebody{
+            background-color: cornflowerblue;
+             width: 800px; 
+            height: 500px; 
+            margin: auto;
+        }
+        #maintable{
+            text-align: center;
+            padding: 10px;
+        }
+        #thenumber{
+            margin: 20px 0px 0px 0px;
+        }
+        #startbtn{
+            margin: 20px 0px 0px 0px;
+           
+        }
+        #displayy{
+            align-items: center;
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin: 20px 0px 0px 0px;
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 500;
+            line-height: 25px;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div id="thebody">
+        <div id="maintable">
+            <h1 id="table">Multiplication Table</h1>
+            <div id="thenumber">
+                <input type="text" id="start-number">
+                <input type="text" id="end-number">
+            </div>
+           
+            <button  id="startbtn" onclick="startMultiply()" >start</button>
+            <p id="displayy"></p>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
+<script>
+
+    function startMultiply() {
+
+        let inputNumber = document.getElementById('start-number')
+        let inputNumberValue = inputNumber.value
+        let inputNumber2 = document.getElementById('end-number')
+        let inputNumberValue2 = inputNumber2.value
+        displayy.innerHTML=''
+        for (let start = Number(inputNumberValue);
+            start <= Number(inputNumberValue2); start++) {
+            let numDiv = document.createElement('div')
+            for (i = 1; i <= 12; i++) {
+                console.log(`${start} X ${i} = ${start * i}`);
+                numDiv.innerHTML += `<P>${start} X ${i} = ${start * i} </P>`;
+            }
+            displayy.appendChild(numDiv)
+        }
+    }
+    
+</script>
